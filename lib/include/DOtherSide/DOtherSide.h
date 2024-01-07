@@ -76,27 +76,27 @@ DOS_API void DOS_CALL dos_qguiapplication_quit(void);
 /// \note A QGuiApplication should have been already created through dos_qguiapplication_create()
 DOS_API void DOS_CALL dos_qguiapplication_delete(void);
 
-/// @}
+// /// @}
 
-/// \defgroup QApplication QApplication
-/// \brief Functions related to the QApplication class
-/// @{
+// /// \defgroup QApplication QApplication
+// /// \brief Functions related to the QApplication class
+// /// @{
 
-/// \brief Create a QApplication
-/// \note The created QApplication should be freed by calling dos_qapplication_delete()
-DOS_API void DOS_CALL dos_qapplication_create(void);
+// /// \brief Create a QApplication
+// /// \note The created QApplication should be freed by calling dos_qapplication_delete()
+// DOS_API void DOS_CALL dos_qapplication_create(void);
 
-/// \brief Calls the QApplication::exec() function of the current QGuiApplication
-/// \note A QApplication should have been already created through dos_qapplication_create()
-DOS_API void DOS_CALL dos_qapplication_exec(void);
+// /// \brief Calls the QApplication::exec() function of the current QGuiApplication
+// /// \note A QApplication should have been already created through dos_qapplication_create()
+// DOS_API void DOS_CALL dos_qapplication_exec(void);
 
-/// \brief Calls the QApplication::quit() function of the current QGuiApplication
-/// \note A QApplication should have been already created through dos_qapplication_create()
-DOS_API void DOS_CALL dos_qapplication_quit(void);
+// /// \brief Calls the QApplication::quit() function of the current QGuiApplication
+// /// \note A QApplication should have been already created through dos_qapplication_create()
+// DOS_API void DOS_CALL dos_qapplication_quit(void);
 
-/// \brief Free the memory of the current QApplication
-/// \note A QApplication should have been already created through dos_qapplication_create()
-DOS_API void DOS_CALL dos_qapplication_delete(void);
+// /// \brief Free the memory of the current QApplication
+// /// \note A QApplication should have been already created through dos_qapplication_create()
+// DOS_API void DOS_CALL dos_qapplication_delete(void);
 
 /// @}
 

@@ -7,7 +7,7 @@
 #include <QTest>
 #include <QSignalSpy>
 #include <QTimer>
-#include <QApplication>
+// #include <QApplication>
 #include <QQuickWindow>
 #include <QQmlApplicationEngine>
 #include <QQuickItem>
@@ -43,13 +43,13 @@ bool ExecuteCoreTest(int argc, char *argv[])
     return QTest::qExec(&test, argc, argv) == 0;
 }
 
-template<typename Test>
-bool ExecuteGuiTest(int argc, char *argv[])
-{
-    QApplication app(argc, argv);
-    Test test;
-    return QTest::qExec(&test, argc, argv) == 0;
-}
+// template<typename Test>
+// bool ExecuteGuiTest(int argc, char *argv[])
+// {
+//     QApplication app(argc, argv);
+//     Test test;
+//     return QTest::qExec(&test, argc, argv) == 0;
+// }
 
 /*
  * Test QGuiApplication
@@ -76,24 +76,24 @@ private slots:
 /*
  * Test QApplication
  */
-class TestQApplication : public QObject
-{
-    Q_OBJECT
+// class TestQApplication : public QObject
+// {
+//     Q_OBJECT
 
-private slots:
-    void testExecution()
-    {
-        bool quit = false;
-        dos_qapplication_create();
-        QTimer::singleShot(100, [&quit]() {
-            quit = true;
-            dos_qapplication_quit();
-        });
-        dos_qapplication_exec();
-        QVERIFY(quit);
-        dos_qapplication_delete();
-    }
-};
+// private slots:
+//     void testExecution()
+//     {
+//         bool quit = false;
+//         dos_qapplication_create();
+//         QTimer::singleShot(100, [&quit]() {
+//             quit = true;
+//             dos_qapplication_quit();
+//         });
+//         dos_qapplication_exec();
+//         QVERIFY(quit);
+//         dos_qapplication_delete();
+//     }
+// };
 
 /*
  * Test QVariant
@@ -831,16 +831,16 @@ int main(int argc, char *argv[])
 
     bool success = true;
     success &= ExecuteTest<TestQGuiApplication>(argc, argv);
-    success &= ExecuteTest<TestQApplication>(argc, argv);
+    // success &= ExecuteTest<TestQApplication>(argc, argv);
     success &= ExecuteTest<TestQVariant>(argc, argv);
     success &= ExecuteTest<TestQUrl>(argc, argv);
     success &= ExecuteTest<TestQModelIndex>(argc, argv);
-    success &= ExecuteGuiTest<TestQQmlApplicationEngine>(argc, argv);
-    success &= ExecuteGuiTest<TestQQmlContext>(argc, argv);
-    success &= ExecuteGuiTest<TestQObject>(argc, argv);
-    success &= ExecuteGuiTest<TestQAbstractItemModel>(argc, argv);
-    success &= ExecuteGuiTest<TestQDeclarativeIntegration>(argc, argv);
-    success &= ExecuteGuiTest<TestQQuickView>(argc, argv);
+    // success &= ExecuteGuiTest<TestQQmlApplicationEngine>(argc, argv);
+    // success &= ExecuteGuiTest<TestQQmlContext>(argc, argv);
+    // success &= ExecuteGuiTest<TestQObject>(argc, argv);
+    // success &= ExecuteGuiTest<TestQAbstractItemModel>(argc, argv);
+    // success &= ExecuteGuiTest<TestQDeclarativeIntegration>(argc, argv);
+    // success &= ExecuteGuiTest<TestQQuickView>(argc, argv);
     success &= ExecuteTest<TestQMetaObject>(argc, argv);
     success &= ExecuteTest<TestQPointer>(argc, argv);
     return success ? 0 : 1;

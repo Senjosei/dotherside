@@ -33,7 +33,7 @@
 #ifdef QT_QUICKCONTROLS2_LIB
 #include <QtQuickControls2/QQuickStyle>
 #endif
-#include <QtWidgets/QApplication>
+// #include <QtWidgets/QApplication>
 
 #include "DOtherSide/DOtherSideTypesCpp.h"
 #include "DOtherSide/DosQMetaObject.h"
@@ -93,31 +93,31 @@ void dos_qguiapplication_quit()
     qGuiApp->quit();
 }
 
-void dos_qapplication_create()
-{
-    static int argc = 1;
-    static char empty[1] = {0};
-    static char *argv[] = {empty};
+// void dos_qapplication_create()
+// {
+//     static int argc = 1;
+//     static char empty[1] = {0};
+//     static char *argv[] = {empty};
 
-    register_meta_types();
+//     register_meta_types();
 
-    new QApplication(argc, argv);
-}
+//     new QApplication(argc, argv);
+// }
 
-void dos_qapplication_delete()
-{
-    delete qApp;
-}
+// void dos_qapplication_delete()
+// {
+//     delete qApp;
+// }
 
-void dos_qapplication_exec()
-{
-    qApp->exec();
-}
+// void dos_qapplication_exec()
+// {
+//     qApp->exec();
+// }
 
-void dos_qapplication_quit()
-{
-    qApp->quit();
-}
+// void dos_qapplication_quit()
+// {
+//     qApp->quit();
+// }
 
 ::DosQQmlApplicationEngine *dos_qqmlapplicationengine_create()
 {
