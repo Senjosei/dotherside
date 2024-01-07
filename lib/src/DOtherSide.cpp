@@ -722,6 +722,11 @@ void dos_qresource_register(const char *filename)
     QResource::registerResource(QString::fromUtf8(filename));
 }
 
+void dos_qresource_register_data(const unsigned char* rcc_binary)
+{
+    QResource::registerResource(rcc_binary);
+}
+
 ::DosQUrl *dos_qurl_create(const char *url, int parsingMode)
 {
     return new QUrl(QString::fromUtf8(url), static_cast<QUrl::ParsingMode>(parsingMode));

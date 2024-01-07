@@ -914,6 +914,9 @@ DOS_API char *DOS_CALL dos_qhash_int_qbytearray_value(const DosQHashIntQByteArra
 /// Register the given .rcc (compiled) file in the resource system
 DOS_API void DOS_CALL dos_qresource_register(const char *filename);
 
+/// Register the given .rcc (compiled) binary data in the resource system
+DOS_API void DOS_CALL dos_qresource_register_data(const unsigned char* rcc_binary);
+
 /// @}
 
 /// \defgroup QUrl QUrl
